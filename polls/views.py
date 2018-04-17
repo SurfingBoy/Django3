@@ -5,7 +5,12 @@ from django.urls import reverse
 
 def index(request):
     #return HttpResponse('Hello World.')
-    return render(request, 'index.html')
+
+    string=u'这是从views发过来的信息'
+    List=['html','css','java','python']
+    dict={'name':u'王武','age':'17'}
+    return render(request, 'index.html',{'dict':dict})
+
 def add(request,a,b):
     # a=request.GET.get('a',0)
     # b=request.GET.get('b',0)

@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['10.0.70.130']
 # Application definition
 
 INSTALLED_APPS = [
+    'blog.apps.BlogConfig',
     'polls.apps.PollsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -121,3 +122,4 @@ USE_TZ = False
 STATIC_URL = '/static/'
 
 TEMPLATE_DIRS = (os.path.join(BASE_DIR,  'templates'),)
+

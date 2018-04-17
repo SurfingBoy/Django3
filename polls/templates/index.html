@@ -6,6 +6,29 @@
 </head>
 <body>
 <p>Hello World</p><br>
-<a href="{% url 'add_new' 6 7 %}">6+7=</a>
+
+<!--string-->
+{{ string }}<br>
+
+<!--列表-->
+{% for i in List %}
+{{ i  }}
+{% endfor %}<br>
+
+<!--字典-->
+{% for key,value in dict.items %}
+    {{ key }}:{{ value }}
+{% endfor %}<br>
+
+{% url 'add_new' 7 11 as url %}
+<a href="{{ url }}">7+11=</a> <br>
+
+{% if request.user.is_authenticated %}
+    用户名：{{ request.user.username }}<br>
+    当前网址：{{ request.path }}
+{% else %}
+    请登录
+{% endif %}
+
 </body>
 </html>
